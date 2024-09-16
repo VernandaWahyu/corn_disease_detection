@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en"
+      dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible"
+              content="IE=edge">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Deteksi Penyakit Pada Tanaman Jagung</title>
+
+        <!-- Prevent the demo from appearing in search engines (REMOVE THIS) -->
+        <meta name="robots"
+              content="noindex">
+
+        <!-- Custom Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500%7CRoboto:400,500&display=swap"
+              rel="stylesheet">
+
+         <!-- Perfect Scrollbar -->
+         <link type="text/css"
+         href="{{ url_for('static', filename='assets/vendor/perfect-scrollbar.css') }}"
+         rel="stylesheet">
+ 
+         <!-- Material Design Icons -->
+         <link type="text/css"
+               href="{{ url_for('static', filename='assets/css/material-icons.css') }}"
+               rel="stylesheet">
+ 
+         <!-- Font Awesome Icons -->
+         <link type="text/css"
+               href="{{ url_for('static', filename='assets/css/fontawesome.css') }}"
+               rel="stylesheet">
+ 
+         <!-- Preloader -->
+         <link type="text/css"
+               href="{{ url_for('static', filename='assets/vendor/spinkit.css') }}"
+               rel="stylesheet">
+ 
+         <!-- App CSS -->
+         <link type="text/css"
+               href="{{ url_for('static', filename='assets/css/app.css') }}"
+               rel="stylesheet">
+    </head>
+
+    <body class=" fixed-layout">
+
+        <div class="preloader">
+           <!-- <div class="sk-chase">
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+            </div>-->
+
+            <div class="sk-bounce">
+    <div class="sk-bounce-dot"></div>
+    <div class="sk-bounce-dot"></div>
+  </div>    
+
+            <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
+        </div>
+
+        <!-- Header Layout -->
+        <div class="mdk-header-layout js-mdk-header-layout">
+
+            <!-- Header -->
+
+            <div id="header"
+                 class="mdk-header bg-dark js-mdk-header m-0"
+                 data-fixed
+                 data-effects="waterfall">
+                <div class="mdk-header__content">
+
+                    <!-- Navbar -->
+                    <nav id="default-navbar"
+                         class="navbar navbar-expand navbar-dark bg-success m-0">
+                        <div class="container">
+                            <!-- Toggle sidebar -->
+                             <!--<button class="navbar-toggler d-block"
+                                    data-toggle="sidebar"
+                                    type="button">
+                                <span class="material-icons">menu</span>
+                            </button>-->
+
+                            <!-- Brand -->
+                            <a href="fixed-student-dashboard.html"
+                               class="navbar-brand">
+                               <!-- <img src="assets/images/logo/white.svg"
+                                     class="mr-2"
+                                     alt="LearnPlus" />-->
+                                <span class="d-none d-xs-md-block"><span class="d-none d-xs-md-block">Sistem Deteksi Penyakit Pada Tanaman Jagung Dengan Menggunakan Algoritma CNN</span></span>
+                            </a>
+                            <div class="flex"></div>                                
+                                <!-- User dropdown -->
+                         
+                                   <a ><img src="{{ url_for('static', filename='assets/images/logo/leaf-logo.png') }}"
+                                             width="65"></a>
+                                    
+                 
+                                <!-- // END User dropdown -->
+
+                            </ul>
+                            <!-- // END Menu -->
+                        </div>
+                    </nav>
+                    <!-- // END Navbar -->
+
+                </div>
+            </div>
+
+            <!-- // END Header -->
+
+           
+
+                <div class="page ">
+
+                    <div class="container page__container">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="fixed-student-dashboard.html">Home</a></li>
+                            <li class="breadcrumb-item active">Corn Detection</li>
+                        </ol>
+                         <!--<h1 class="h2 text-success">Corn Detection</h1>-->
+                        <div class="row">
+                            <div class="col-lg-7 mx-auto my-3">
+                                <div class="card shadow-sm p-4">
+                                    <h1 class="h4 text-center">Hasil Deteksi Penyakit Jagung</h1>
+                                    <img src="{{ url_for('static', filename='uploads/' + image_path.split('/')[-1]) }}" alt="Leaf Image" class="img-fluid mx-auto d-block" style="max-width: 300px;">
+                                    <h2 class="h4 text-center">{{ disease }}</h2>
+                                    <p class="text-center">Disease: {{ disease }}</p>
+                                   <p class="text-center">Accuracy: {{ confidence*100 }}%</p>
+                                    <a href="{{ url_for('index') }}" class="text-center">Deteksi Ulang</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="container page__container">
+                        <div class="footer">
+                            Copyright &copy; 2024 - <a href="http://themeforest.net/item/learnplus-learning-management-application/15287372?ref=mosaicpro">Sistem Deteksi Penyakit Pada Tanaman Jagung Dengan Menggunakan Algoritma CNN</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // END Header Layout Content -->
+
+        </div>
+        <!-- // END Header Layout -->
+
+        <div class="mdk-drawer js-mdk-drawer"
+             id="default-drawer">
+            <div class="mdk-drawer__content ">
+                <div class="sidebar sidebar-left sidebar-dark bg-dark o-hidden"
+                     data-perfect-scrollbar>
+                    
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- // END Components Menu -->
+
+                        <div class="sidebar-heading"></div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- App Settings FAB -->
+        <div id="app-settings">
+            <app-settings layout-active="fixed"
+                          :layout-location="{
+      'fixed': 'fixed-student-dashboard.html',
+      'default': 'student-dashboard.html'
+    }"
+                          sidebar-variant="bg-transparent border-0"></app-settings>
+        </div>
+        <!-- jQuery -->
+        <script src="{{ url_for('static', filename='assets/vendor/jquery.min.js') }}"></script>
+
+        <!-- Bootstrap -->
+        <script src="{{ url_for('static', filename='assets/vendor/popper.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/vendor/bootstrap.min.js') }}"></script>
+
+        <!-- Perfect Scrollbar -->
+        <script src="{{ url_for('static', filename='assets/vendor/perfect-scrollbar.min.js') }}"></script>
+
+        <!-- MDK -->
+        <script src="{{ url_for('static', filename='assets/vendor/dom-factory.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/vendor/material-design-kit.js') }}"></script>
+
+        <!-- App JS -->
+        <script src="{{ url_for('static', filename='assets/js/app.js') }}"></script>
+
+        <!-- Highlight.js -->
+        <script src="{{ url_for('static', filename='assets/js/hljs.js') }}"></script>
+
+        <!-- App Settings (safe to remove) -->
+        <script src="{{ url_for('static', filename='assets/js/app-settings.js') }}"></script>
+
+        <!-- Global Settings -->
+        <script src="{{ url_for('static', filename='assets/js/settings.js') }}"></script>
+
+        <!-- Moment.js -->
+        <script src="{{ url_for('static', filename='assets/vendor/moment.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/vendor/moment-range.js') }}"></script>
+
+        <!-- Chart.js -->
+        <script src="{{ url_for('static', filename='assets/js/Chart.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/js/chartjs.js') }}"></script>
+
+        <!-- Student Dashboard Page JS -->
+        <!-- <script src="assets/js/chartjs-rounded-bar.js"></script> -->
+        <script src="{{ url_for('static', filename='assets/js/page.student-dashboard.js') }}"></script>
+
+    </body>
+
+</html>

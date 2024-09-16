@@ -1,0 +1,8 @@
+pip install flask
+pip install tensorflow
+pip install matplotlib
+pip install numpy
+pip install pandas
+pip install opencv-python
+
+note:tensorflow wajib versi 2.7.0
